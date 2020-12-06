@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.ArregloAlumno;
 import vista.frmBuscarAlu;
-import vista.frmEliminarAlu;
+import vista.frmEditarAlu;
 import vista.frmIngresarAlu;
 import vista.frmInicio;
 import vista.frmMostrarAlu;
@@ -20,6 +20,7 @@ import vista.frmMostrarAlu;
  * 
  * @author Luiggi Pasache
  */
+
 public class CtrlInicio {
     frmInicio vista;
     ArregloAlumno modelo;
@@ -46,11 +47,11 @@ public class CtrlInicio {
             }
         };
         
-        ActionListener eliminarAlu = new ActionListener() {
+        ActionListener editarAlu = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vista.dispose();
-                frmEliminarAlu vista = new frmEliminarAlu();
+                frmEditarAlu vista = new frmEditarAlu();
                 //agregar controlador eliminar
             }
         };
@@ -76,7 +77,14 @@ public class CtrlInicio {
         vista.btnIngresarAlum.addActionListener(ingresarAlu);
         vista.btnMostrarAlum.addActionListener(mostrarAlu);
         vista.btnbuscarAlum.addActionListener(buscarAlu);
-        vista.btnEliminarAlum.addActionListener(eliminarAlu);
+        vista.btnEditarAlum.addActionListener(editarAlu);
         vista.btnSalir.addActionListener(salir);
     }
+    
+    public void iniciar(){
+        this.vista.setLocationRelativeTo(null);
+        this.vista.setVisible(true);     
+    }
+    
 }
+    

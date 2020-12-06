@@ -15,17 +15,17 @@ public class Alumno {
     private int codigo;
     private String nombre;
     private Fecha fecha;
-    private int edad;
+    private String nivel;
     private char sexo;
     private int grado;
     private String seccion;
     private boolean existe;
 
-    public Alumno(int codigo, String nombre, Fecha fecha, int edad, char sexo, int grado, String seccion) {
+    public Alumno(int codigo, String nombre, Fecha fecha, String nivel, char sexo, int grado, String seccion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.fecha = fecha;
-        this.edad = edad;
+        this.nivel = nivel;
         this.sexo = sexo;
         this.grado = grado;
         this.seccion = seccion;
@@ -58,12 +58,12 @@ public class Alumno {
         this.fecha = fecha;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getNivel() {
+        return nivel;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
     public char getSexo() {
