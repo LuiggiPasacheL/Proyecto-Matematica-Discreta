@@ -17,9 +17,10 @@ import vista.frmInicio;
  */
 public class App {    
     public static void main(String[] args) {
-        Datos.datosAlum.add(new Alumno(12,"luiggi",new Fecha(11,20,2000),"primaria",'m', 12, "d"));
-        frmInicio vista = new frmInicio();
+        Datos.datosAlum.add(new Alumno("luiggi","pasache", new Fecha(21,8,2000), "Secundaria", "Femenino", 5, "C"));
+        Datos.datosAlum.add(new Alumno("steep","lopera" ,new Fecha(21,8,2000), "Secundaria", "Masculino", 5, "D"));
         
+        frmInicio vista = new frmInicio();
         CtrlInicio controlador = new CtrlInicio(vista, Datos.datosAlum);
         
         controlador.iniciar();

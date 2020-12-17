@@ -6,30 +6,38 @@
 
 package modelo;
 
+import java.util.Objects;
+
 /**
  * 
  * @author Luiggi Pasache
  */
 public class Alumno {
-    
+    private static int indice = 1;
     private int codigo;
     private String nombre;
+    private String apellido;
     private Fecha fecha;
     private String nivel;
-    private char sexo;
+    private String sexo;
     private int grado;
     private String seccion;
     private boolean existe;
 
-    public Alumno(int codigo, String nombre, Fecha fecha, String nivel, char sexo, int grado, String seccion) {
-        this.codigo = codigo;
+    public Alumno(String nombre,String apellido, Fecha fecha, String nivel, String sexo, int grado, String seccion) {
+        this.codigo = indice++;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.fecha = fecha;
         this.nivel = nivel;
         this.sexo = sexo;
         this.grado = grado;
         this.seccion = seccion;
         this.existe = true; 
+    }
+    
+    public Alumno(String nombre){
+        this.nombre = nombre;
     }
 
     
@@ -49,6 +57,14 @@ public class Alumno {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
     public Fecha getFecha() {
         return fecha;
@@ -66,11 +82,11 @@ public class Alumno {
         this.nivel = nivel;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -97,6 +113,32 @@ public class Alumno {
     public void setExiste(boolean existe) {
         this.existe = existe;
     }
+
+    @Override
+    public String toString() {
+        return this.nombre+'-'+this.codigo;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        
+        if (!this.nombre.equals(other.nombre)) {
+            return false;
+        }
+        return true;
+    }
+
+    
     
     
 }

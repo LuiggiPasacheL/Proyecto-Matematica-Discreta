@@ -6,12 +6,15 @@
 
 package main;
 
-import modelo.ArregloAlumno;
+import modelo.Alumno;
+
+import java.util.ArrayList;
+
 
 /**
  * 
  * @author Luiggi Pasache
  */
 public class Datos {
-    public static ArregloAlumno datosAlum = new ArregloAlumno();
+    public static ArrayList<Alumno> datosAlum = new ArrayList<Alumno>();
 }

@@ -31,9 +31,9 @@ public class frmInicio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         panelCentro = new javax.swing.JPanel();
         btnIngresarAlum = new javax.swing.JToggleButton();
-        btnbuscarAlum = new javax.swing.JToggleButton();
         btnMostrarAlum = new javax.swing.JToggleButton();
         btnEditarAlum = new javax.swing.JToggleButton();
+        btnbuscarAlum = new javax.swing.JToggleButton();
         panelSur = new javax.swing.JPanel();
         btnSalir = new javax.swing.JToggleButton();
 
@@ -68,9 +68,6 @@ public class frmInicio extends javax.swing.JFrame {
             }
         });
 
-        btnbuscarAlum.setText("Buscar Alumno");
-        btnbuscarAlum.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
         btnMostrarAlum.setText("Mostrar Alumnos");
         btnMostrarAlum.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMostrarAlum.addActionListener(new java.awt.event.ActionListener() {
@@ -79,8 +76,11 @@ public class frmInicio extends javax.swing.JFrame {
             }
         });
 
-        btnEditarAlum.setText("Eliminar Alumnos");
+        btnEditarAlum.setText("Editar Alumno");
         btnEditarAlum.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        btnbuscarAlum.setText("Eliminar Alumno");
+        btnbuscarAlum.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout panelCentroLayout = new javax.swing.GroupLayout(panelCentro);
         panelCentro.setLayout(panelCentroLayout);
@@ -88,11 +88,11 @@ public class frmInicio extends javax.swing.JFrame {
             panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCentroLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMostrarAlum, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIngresarAlum))
-                .addGap(64, 64, 64)
-                .addGroup(panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnMostrarAlum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnIngresarAlum, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnbuscarAlum, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEditarAlum, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
@@ -103,18 +103,18 @@ public class frmInicio extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarAlum)
-                    .addComponent(btnbuscarAlum))
+                    .addComponent(btnEditarAlum))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMostrarAlum)
-                    .addComponent(btnEditarAlum))
+                    .addComponent(btnbuscarAlum))
                 .addContainerGap())
         );
 
         btnIngresarAlum.getAccessibleContext().setAccessibleName("Añadir alumnos a la base de datos");
-        btnbuscarAlum.getAccessibleContext().setAccessibleName("");
         btnMostrarAlum.getAccessibleContext().setAccessibleName("");
         btnEditarAlum.getAccessibleContext().setAccessibleName("");
+        btnbuscarAlum.getAccessibleContext().setAccessibleName("");
 
         getContentPane().add(panelCentro, java.awt.BorderLayout.CENTER);
 

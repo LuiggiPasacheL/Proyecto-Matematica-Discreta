@@ -8,8 +8,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import modelo.ArregloAlumno;
+
+import modelo.Alumno;
 import vista.frmBuscarAlu;
 import vista.frmEditarAlu;
 import vista.frmIngresarAlu;
@@ -23,9 +25,9 @@ import vista.frmMostrarAlu;
 
 public class CtrlInicio {
     frmInicio vista;
-    ArregloAlumno modelo;
+    ArrayList<Alumno> modelo;
     
-    public CtrlInicio(frmInicio vista, ArregloAlumno modelo){
+    public CtrlInicio(frmInicio vista, ArrayList<Alumno> modelo){
         this.vista = vista;
         this.modelo = modelo;
         
@@ -33,8 +35,9 @@ public class CtrlInicio {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vista.dispose();
-                frmIngresarAlu vista = new frmIngresarAlu();
-                //agregar controlador ingresarALu
+                frmIngresarAlu fIngresar = new frmIngresarAlu();
+                CtrlIngresarAlu mIngresar = new CtrlIngresarAlu(modelo, fIngresar);
+                mIngresar.iniciar();
             }
         };
         
@@ -51,8 +54,10 @@ public class CtrlInicio {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vista.dispose();
-                frmEditarAlu vista = new frmEditarAlu();
-                //agregar controlador eliminar
+                frmEditarAlu vistaEditar = new frmEditarAlu();
+                CtrlEditarAlu controlEditar = new CtrlEditarAlu(modelo, vistaEditar);
+                
+                controlEditar.iniciar();
             }
         };
         
