@@ -10,13 +10,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import main.Datos;
 
 import modelo.Alumno;
-import vista.frmBuscarAlu;
 import vista.frmEditarAlu;
 import vista.frmIngresarAlu;
 import vista.frmInicio;
-import vista.frmMostrarAlu;
 
 /**
  * 
@@ -41,32 +41,17 @@ public class CtrlInicio {
             }
         };
         
-        ActionListener buscarAlu = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                vista.dispose();
-                frmBuscarAlu vista = new frmBuscarAlu();
-                //agregar controlador buscar
-            }
-        };
-        
         ActionListener editarAlu = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                vista.dispose();
-                frmEditarAlu vistaEditar = new frmEditarAlu();
-                CtrlEditarAlu controlEditar = new CtrlEditarAlu(modelo, vistaEditar);
                 
-                controlEditar.iniciar();
-            }
-        };
-        
-        ActionListener mostrarAlu = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+                Datos.indiceALumnoSeleccionado = vista.tblAlumnos.getSelectedRow() + 1;
+                
                 vista.dispose();
-                frmMostrarAlu vista = new frmMostrarAlu();
-                //agregar controlador mostrar
+                
+                frmEditarAlu fEditar = new frmEditarAlu();              
+                CtrlEditarAlu cEditar = new CtrlEditarAlu(modelo, fEditar);
+                cEditar.iniciar();
             }
         };
         
@@ -79,16 +64,36 @@ public class CtrlInicio {
             }
         };
         
-        vista.btnIngresarAlum.addActionListener(ingresarAlu);
-        vista.btnMostrarAlum.addActionListener(mostrarAlu);
-        vista.btnbuscarAlum.addActionListener(buscarAlu);
-        vista.btnEditarAlum.addActionListener(editarAlu);
+        vista.btnIngresarAlumnos.addActionListener(ingresarAlu);
+        
         vista.btnSalir.addActionListener(salir);
+        
+        vista.btnEditarAlumno.addActionListener(editarAlu);
     }
     
     public void iniciar(){
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);     
+        
+        String[][] datos = new String[Datos.datosAlum.size()][8];
+        
+        for (int i = 0; i < Datos.datosAlum.size(); i++) {
+            datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
+            datos[i][1] = Datos.datosAlum.get(i).getNombre();
+            datos[i][2] = Datos.datosAlum.get(i).getApellido();
+            datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
+            datos[i][4] = Datos.datosAlum.get(i).getSexo();
+            datos[i][5] = Datos.datosAlum.get(i).getNivel();
+            datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
+            datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+        }
+        
+        String[] cabecera = {"ID","Nombre","Apellidos","Fecha Nac","Sexo","Nivel","Grado","Seccion"};
+        
+        DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+        
+        vista.tblAlumnos.setModel(tabla);
+        
     }
     
 }
