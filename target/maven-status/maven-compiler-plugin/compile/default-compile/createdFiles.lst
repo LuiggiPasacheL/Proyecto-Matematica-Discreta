@@ -1,20 +1,16 @@
 vista\frmInicio.class
 controlador\CtrlEditarAlu$4.class
 controlador\CtrlEditarAlu$1.class
-vista\frmMostrarAlu.class
-controlador\CtrlInicio$5.class
 controlador\CtrlIngresarAlu$1.class
 vista\frmEditarAlu$3.class
 vista\frmIngresarAlu$2.class
 vista\frmIngresarAlu.class
-vista\frmMostrarAlu$1.class
 controlador\CtrlInicio$2.class
 vista\frmInicio$2.class
 controlador\CtrlIngresarAlu.class
 controlador\CtrlInicio.class
 controlador\CtrlEditarAlu$3.class
 vista\frmBuscarAlu$1.class
-controlador\CtrlInicio$4.class
 main\Datos.class
 controlador\CtrlIngresarAlu$2.class
 modelo\Fecha.class
@@ -33,4 +29,3 @@ vista\frmBuscarAlu.class
 vista\frmEditarAlu.class
 vista\frmInicio$1.class
 controlador\CtrlInicio$3.class
-vista\frmMostrarAlu$2.class

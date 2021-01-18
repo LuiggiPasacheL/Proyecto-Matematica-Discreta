@@ -71,7 +71,7 @@ public class Fecha {
     
     @Override
     public String toString() {
-        return String.valueOf(dia+'/'+mes+'/'+ano);
+        return String.valueOf(dia)+'/'+String.valueOf(mes)+'/'+String.valueOf(ano);
     }
 
 

@@ -31,7 +31,7 @@ public class CtrlEditarAlu {
         this.modeloM = modelo;
         this.vista = vista;
         
-        vista.btnRetroceder.addActionListener(new ActionListener() {
+        ActionListener volverInicio = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 vista.dispose();
@@ -41,9 +41,11 @@ public class CtrlEditarAlu {
                 
                 mInicio.iniciar();
             }
-        });
+        };
         
-        vista.btnEditar.addActionListener(new ActionListener() {
+        this.vista.btnRetroceder.addActionListener(volverInicio);
+        
+        this.vista.btnEditar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
@@ -88,15 +90,16 @@ public class CtrlEditarAlu {
                         System.out.println(Datos.datosAlum);
 
                         JOptionPane.showMessageDialog(vista, "Modificado exitosamente Alumno: "+nombre);
+                        
+                        volverInicio.actionPerformed(e);
                     }
-                    
                 }catch(Exception excepcion){ //agregar mas errores
                     JOptionPane.showMessageDialog(vista, "Error en los elementos","Error",0);
                 }
             }
         });
         
-        vista.cBAlumnos.addItemListener(new ItemListener() {
+        this.vista.cBAlumnos.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 int i = vista.cBAlumnos.getSelectedIndex()-1;
@@ -138,8 +141,8 @@ public class CtrlEditarAlu {
     
     public void iniciar(){
         this.vista.setLocationRelativeTo(null);
-        this.vista.setVisible(true);   
-        
+        this.vista.setVisible(true);
+
         DefaultComboBoxModel modeloAlumnos = new DefaultComboBoxModel();
         Alumno[] alumnoArreglo = Datos.datosAlum.toArray(new Alumno[Datos.datosAlum.size()]);
         modeloAlumnos.addElement("Seleccione -- Alumno");
@@ -148,5 +151,7 @@ public class CtrlEditarAlu {
         }
         
         this.vista.cBAlumnos.setModel(modeloAlumnos);
+        
+        this.vista.cBAlumnos.setSelectedIndex(Datos.indiceALumnoSeleccionado);
     }
 }

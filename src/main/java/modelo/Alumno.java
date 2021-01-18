@@ -8,11 +8,8 @@ package modelo;
 
 import java.util.Objects;
 
-/**
- * 
- * @author Luiggi Pasache
- */
 public class Alumno {
+
     private static int indice = 1;
     private int codigo;
     private String nombre;
@@ -36,18 +33,32 @@ public class Alumno {
         this.existe = true; 
     }
     
-    public Alumno(String nombre){
+    public Alumno(String nombre, String apellido){
         this.nombre = nombre;
+        this.apellido = apellido;
     }
 
-    
-    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        
+        if (this.nombre.equals(other.nombre) && this.apellido.equals(other.apellido)){
+            return true;
+        }
+        return false;
+    }
+
     public int getCodigo() {
         return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public String getNombre() {
@@ -118,27 +129,4 @@ public class Alumno {
     public String toString() {
         return this.nombre+'-'+this.codigo;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Alumno other = (Alumno) obj;
-        
-        if (!this.nombre.equals(other.nombre)) {
-            return false;
-        }
-        return true;
-    }
-
-    
-    
-    
 }

@@ -70,7 +70,7 @@ public class CtrlIngresarAlu {
             public void actionPerformed(ActionEvent e) {
                 vista.dispose();
                 frmInicio fInicio = new frmInicio();
-                CtrlInicio mInicio = new CtrlInicio(fInicio, Datos.datosAlum);
+                CtrlInicio mInicio = new CtrlInicio(fInicio, modelo);
         
                 mInicio.iniciar();
             }

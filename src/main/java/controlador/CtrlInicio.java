@@ -44,10 +44,10 @@ public class CtrlInicio {
         ActionListener editarAlu = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                vista.dispose();
                 
                 Datos.indiceALumnoSeleccionado = vista.tblAlumnos.getSelectedRow() + 1;
-                
-                vista.dispose();
                 
                 frmEditarAlu fEditar = new frmEditarAlu();              
                 CtrlEditarAlu cEditar = new CtrlEditarAlu(modelo, fEditar);
@@ -92,7 +92,7 @@ public class CtrlInicio {
         
         DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
         
-        vista.tblAlumnos.setModel(tabla);
+        this.vista.tblAlumnos.setModel(tabla);
         
     }
     
