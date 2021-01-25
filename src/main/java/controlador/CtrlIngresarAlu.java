@@ -8,8 +8,13 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.util.ArrayList;
+import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.MutableComboBoxModel;
+import javax.swing.event.ListDataListener;
 import main.Datos;
 import modelo.Alumno;
 import vista.frmIngresarAlu;
@@ -44,6 +49,10 @@ public class CtrlIngresarAlu {
                     int ano = Integer.parseInt((String) vista.cBano.getSelectedItem());
                     Fecha fecha = new Fecha(dia,mes,ano);
                     
+                    if(!fecha.validar()){
+                        throw new ArithmeticException();
+                    }
+                    
                     String nivel = (String) vista.cBnivel.getSelectedItem();
                     
                     String sexo = (String) vista.cBsexo.getSelectedItem();
@@ -58,10 +67,57 @@ public class CtrlIngresarAlu {
                     vista.txtNombre.setText("");
                     vista.txtApellidos.setText("");
                     vista.txtSeccion.setText("");
+                    
                     JOptionPane.showMessageDialog(vista, "Agregado exitosamente Alumno: "+nombre,"Error",1);
+                    
                 }catch(NumberFormatException excepcion){
+                    
                     JOptionPane.showMessageDialog(vista, "Error en los elementos","Error",0);
+                    
+                }catch(ArithmeticException ex){
+                    JOptionPane.showMessageDialog(vista, "Fecha ingresada incorrectamente","Error",0);
+
                 }
+            }
+        });
+        
+        this.vista.cBgrado.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if(vista.cBnivel.getSelectedIndex() == 0){
+                    vista.cBgrado.removeAllItems();
+                    System.out.println("hola1");
+                    vista.cBgrado.addItem("1");
+                    vista.cBgrado.addItem("2");
+                    vista.cBgrado.addItem("3");
+                    vista.cBgrado.addItem("4");
+                    vista.cBgrado.addItem("5");
+
+                }else if(vista.cBnivel.getSelectedIndex() == 1){
+                    vista.cBgrado.removeAllItems();
+                    System.out.println("hola2");
+
+                    vista.cBgrado.addItem("1");
+                    vista.cBgrado.addItem("2");
+                    vista.cBgrado.addItem("3");
+                    vista.cBgrado.addItem("4");
+                    vista.cBgrado.addItem("5");
+                    vista.cBgrado.addItem("6");
+                }else if(vista.cBnivel.getSelectedIndex() == 2){
+                    vista.cBgrado.removeAllItems();
+                                System.out.println("hola3");
+
+                    vista.cBgrado.addItem("1");
+                    vista.cBgrado.addItem("2");
+                    vista.cBgrado.addItem("3");
+                    vista.cBgrado.addItem("4");
+                    vista.cBgrado.addItem("5");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                
             }
         });
         
@@ -79,6 +135,8 @@ public class CtrlIngresarAlu {
     
     public void iniciar(){
         this.vista.setLocationRelativeTo(null);
-        this.vista.setVisible(true);     
+        this.vista.setVisible(true);
+        
+        
     }
 }

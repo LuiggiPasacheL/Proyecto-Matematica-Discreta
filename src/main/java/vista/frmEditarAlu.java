@@ -102,7 +102,7 @@ public class frmEditarAlu extends javax.swing.JFrame {
 
         jLabel4.setText("Fecha de Nacimiento");
 
-        cBSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Otro" }));
+        cBSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
 
         jLabel9.setText("Nivel");
 

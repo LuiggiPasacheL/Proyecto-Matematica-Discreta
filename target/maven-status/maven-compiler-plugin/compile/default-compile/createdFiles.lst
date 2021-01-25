@@ -1,6 +1,8 @@
 vista\frmInicio.class
+vista\frmInicio$7.class
 controlador\CtrlEditarAlu$4.class
 controlador\CtrlEditarAlu$1.class
+controlador\CtrlInicio$5.class
 controlador\CtrlIngresarAlu$1.class
 vista\frmEditarAlu$3.class
 vista\frmIngresarAlu$2.class
@@ -8,10 +10,14 @@ vista\frmIngresarAlu.class
 controlador\CtrlInicio$2.class
 vista\frmInicio$2.class
 controlador\CtrlIngresarAlu.class
+vista\frmInicio$5.class
 controlador\CtrlInicio.class
+controlador\CtrlIngresarAlu$3.class
 controlador\CtrlEditarAlu$3.class
-vista\frmBuscarAlu$1.class
+controlador\CtrlEditarAlu$5.class
+controlador\CtrlInicio$4.class
 main\Datos.class
+vista\frmInicio$6.class
 controlador\CtrlIngresarAlu$2.class
 modelo\Fecha.class
 modelo\Alumno.class
@@ -25,7 +31,6 @@ vista\frmEditarAlu$2.class
 vista\frmInicio$4.class
 controlador\CtrlEditarAlu$2.class
 vista\frmIngresarAlu$3.class
-vista\frmBuscarAlu.class
 vista\frmEditarAlu.class
 vista\frmInicio$1.class
 controlador\CtrlInicio$3.class

@@ -17,7 +17,6 @@ import java.util.ArrayList;
  */
 public class Datos {
     public static ArrayList<Alumno> datosAlum = new ArrayList<Alumno>();
-    
     //datos auxiliares
     public static int indiceALumnoSeleccionado;
 }

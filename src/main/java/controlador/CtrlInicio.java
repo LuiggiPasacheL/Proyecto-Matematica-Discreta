@@ -8,9 +8,16 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import main.Datos;
 
 import modelo.Alumno;
@@ -26,10 +33,12 @@ import vista.frmInicio;
 public class CtrlInicio {
     frmInicio vista;
     ArrayList<Alumno> modelo;
-    
+    int columnaAFiltrar;
+
     public CtrlInicio(frmInicio vista, ArrayList<Alumno> modelo){
         this.vista = vista;
         this.modelo = modelo;
+        
         
         ActionListener ingresarAlu = new ActionListener() {
             @Override
@@ -69,6 +78,48 @@ public class CtrlInicio {
         vista.btnSalir.addActionListener(salir);
         
         vista.btnEditarAlumno.addActionListener(editarAlu);
+        
+        vista.txtFiltrar.addKeyListener(new KeyAdapter() {
+            
+            @Override
+            public void keyReleased(KeyEvent e){
+                
+                if(vista.rDFiltroxApellido.isSelected()){
+                    columnaAFiltrar = 2;
+                }else if(vista.rDFiltroxGrado.isSelected()){
+                    columnaAFiltrar = 6;
+                }else if(vista.rDFiltroxNombre.isSelected()){
+                    columnaAFiltrar = 1;
+                }else if(vista.rDFiltroxSeccion.isSelected()){
+                    columnaAFiltrar = 7;
+                }else{
+                    JOptionPane.showMessageDialog(vista, "Seleccione una opcion");
+                }
+                
+                vista.trs.setRowFilter(RowFilter.regexFilter(vista.txtFiltrar.getText(), columnaAFiltrar));
+            }
+            
+        });
+        
+        
+        FocusListener fl = new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                vista.txtFiltrar.setText("");
+                vista.trs.setRowFilter(RowFilter.regexFilter(vista.txtFiltrar.getText(), columnaAFiltrar));
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+            }
+        };
+        
+        vista.rDFiltroxApellido.addFocusListener(fl);
+        vista.rDFiltroxNombre.addFocusListener(fl);
+        vista.rDFiltroxGrado.addFocusListener(fl);
+        vista.rDFiltroxSeccion.addFocusListener(fl);
+        
+        
     }
     
     public void iniciar(){
@@ -87,11 +138,12 @@ public class CtrlInicio {
             datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
             datos[i][7] = Datos.datosAlum.get(i).getSeccion();
         }
-        
         String[] cabecera = {"ID","Nombre","Apellidos","Fecha Nac","Sexo","Nivel","Grado","Seccion"};
         
         DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
-        
+
+        this.vista.trs = new TableRowSorter(tabla);
+        this.vista.tblAlumnos.setRowSorter(this.vista.trs);
         this.vista.tblAlumnos.setModel(tabla);
         
     }

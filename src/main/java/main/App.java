@@ -7,6 +7,8 @@
 package main;
 
 import controlador.CtrlInicio;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import modelo.Alumno;
 import modelo.Fecha;
 import vista.frmInicio;
@@ -20,8 +22,9 @@ public class App {
     public static void main(String[] args) {
         
         Datos.datosAlum.add(new Alumno("luiggi","pasache", new Fecha(21,8,2000), "Secundaria", "Masculino", 5, "C"));
-        Datos.datosAlum.add(new Alumno("steep","lopera" ,new Fecha(21,8,2000), "Secundaria", "Masculino", 5, "D"));
+        Datos.datosAlum.add(new Alumno("hola","lopera" ,new Fecha(21,8,2000), "Secundaria", "Masculino", 5, "D"));
         
+
         frmInicio vista = new frmInicio();
         CtrlInicio controlador = new CtrlInicio(vista, Datos.datosAlum);
         

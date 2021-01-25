@@ -6,8 +6,6 @@
 
 package modelo;
 
-import java.util.Objects;
-
 public class Alumno {
 
     private static int indice = 1;
@@ -21,6 +19,7 @@ public class Alumno {
     private String seccion;
     private boolean existe;
 
+
     public Alumno(String nombre,String apellido, Fecha fecha, String nivel, String sexo, int grado, String seccion) {
         this.codigo = indice++;
         this.nombre = nombre;
@@ -33,6 +32,8 @@ public class Alumno {
         this.existe = true; 
     }
     
+    
+    //para buscar alumnos por nombre y apellido
     public Alumno(String nombre, String apellido){
         this.nombre = nombre;
         this.apellido = apellido;

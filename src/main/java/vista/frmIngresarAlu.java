@@ -17,7 +17,7 @@ public class frmIngresarAlu extends javax.swing.JFrame {
     public frmIngresarAlu() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,7 +135,7 @@ public class frmIngresarAlu extends javax.swing.JFrame {
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
-        cBsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenimo", "Otro" }));
+        cBsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
 
         jLabel9.setText("Nivel");
 

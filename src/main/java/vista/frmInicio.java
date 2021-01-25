@@ -5,6 +5,8 @@
  */
 package vista;
 
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author Luiggi Pasache
@@ -17,6 +19,8 @@ public class frmInicio extends javax.swing.JFrame {
     public frmInicio() {
         initComponents();
     }
+    
+    public TableRowSorter trs;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,6 +32,7 @@ public class frmInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         panelNorte = new javax.swing.JPanel();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         txtValor1 = new javax.swing.JTextField();
@@ -40,6 +45,12 @@ public class frmInicio extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtFiltrar = new javax.swing.JTextField();
+        rDFiltroxNombre = new javax.swing.JRadioButton();
+        rDFiltroxApellido = new javax.swing.JRadioButton();
+        rDFiltroxGrado = new javax.swing.JRadioButton();
+        rDFiltroxSeccion = new javax.swing.JRadioButton();
         panelSur = new javax.swing.JPanel();
         btnSalir = new javax.swing.JToggleButton();
         btnIngresarAlumnos = new javax.swing.JToggleButton();
@@ -133,35 +144,89 @@ public class frmInicio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setText("REGISTRO DE ALUMNOS");
+        jLabel1.setText("<html> <h1>REGISTRO DE ALUMNOS</h1> </html>");
+
+        jLabel2.setText("Filtrar");
+
+        txtFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFiltrarActionPerformed(evt);
+            }
+        });
+        txtFiltrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFiltrarKeyTyped(evt);
+            }
+        });
+
+        buttonGroup1.add(rDFiltroxNombre);
+        rDFiltroxNombre.setSelected(true);
+        rDFiltroxNombre.setText("Filtrar por Nombre");
+
+        buttonGroup1.add(rDFiltroxApellido);
+        rDFiltroxApellido.setText("Filtrar por Apellido");
+
+        buttonGroup1.add(rDFiltroxGrado);
+        rDFiltroxGrado.setText("Filtrar por Grado");
+
+        buttonGroup1.add(rDFiltroxSeccion);
+        rDFiltroxSeccion.setText("Filtrar por seccion");
 
         javax.swing.GroupLayout panelNorteLayout = new javax.swing.GroupLayout(panelNorte);
         panelNorte.setLayout(panelNorteLayout);
         panelNorteLayout.setHorizontalGroup(
             panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelNorteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(654, Short.MAX_VALUE))
-            .addGroup(panelNorteLayout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelNorteLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(rDFiltroxNombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(rDFiltroxApellido)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addComponent(rDFiltroxGrado))
+                    .addGroup(panelNorteLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelNorteLayout.createSequentialGroup()
+                                .addGap(97, 97, 97)
+                                .addComponent(txtFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelNorteLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(rDFiltroxSeccion)
+                .addContainerGap())
         );
         panelNorteLayout.setVerticalGroup(
             panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNorteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelNorteLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addGap(12, 12, 12)
+                .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rDFiltroxApellido)
+                    .addComponent(rDFiltroxNombre)
+                    .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rDFiltroxGrado)
+                        .addComponent(rDFiltroxSeccion)))
+                .addGap(26, 26, 26))
         );
 
         getContentPane().add(panelNorte, java.awt.BorderLayout.PAGE_START);
@@ -217,6 +282,11 @@ public class frmInicio extends javax.swing.JFrame {
 
         getContentPane().add(panelSur, java.awt.BorderLayout.PAGE_END);
 
+        tblAlumnos = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
         tblAlumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -229,6 +299,7 @@ public class frmInicio extends javax.swing.JFrame {
             }
         ));
         tblAlumnos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblAlumnos.setFocusable(false);
         jScrollPane1.setViewportView(tblAlumnos);
 
         javax.swing.GroupLayout panelCentroLayout = new javax.swing.GroupLayout(panelCentro);
@@ -257,6 +328,14 @@ public class frmInicio extends javax.swing.JFrame {
     private void btnIngresarAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAlumnosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnIngresarAlumnosActionPerformed
+
+    private void txtFiltrarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFiltrarKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFiltrarKeyTyped
+
+    private void txtFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFiltrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFiltrarActionPerformed
 
     private void txtValor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValor1ActionPerformed
         // TODO add your handling code here:
@@ -302,9 +381,11 @@ public class frmInicio extends javax.swing.JFrame {
     public javax.swing.JToggleButton btnEditarAlumno;
     public javax.swing.JToggleButton btnIngresarAlumnos;
     public javax.swing.JToggleButton btnSalir;
+    public javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -316,7 +397,12 @@ public class frmInicio extends javax.swing.JFrame {
     private javax.swing.JPanel panelCentro;
     private javax.swing.JPanel panelNorte;
     private javax.swing.JPanel panelSur;
+    public javax.swing.JRadioButton rDFiltroxApellido;
+    public javax.swing.JRadioButton rDFiltroxGrado;
+    public javax.swing.JRadioButton rDFiltroxNombre;
+    public javax.swing.JRadioButton rDFiltroxSeccion;
     public javax.swing.JTable tblAlumnos;
+    public javax.swing.JTextField txtFiltrar;
     public javax.swing.JTextField txtValor1;
     public javax.swing.JTextField txtValor2;
     // End of variables declaration//GEN-END:variables
