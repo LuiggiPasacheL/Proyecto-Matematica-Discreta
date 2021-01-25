@@ -19,13 +19,25 @@ public class Alumno {
     private String seccion;
     private boolean existe;
 
-
+    //por si necesita cambiar nivel
     public Alumno(String nombre,String apellido, Fecha fecha, String nivel, String sexo, int grado, String seccion) {
         this.codigo = indice++;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha = fecha;
         this.nivel = nivel;
+        this.sexo = sexo;
+        this.grado = grado;
+        this.seccion = seccion;
+        this.existe = true; 
+    }
+    
+    public Alumno(String nombre,String apellido, Fecha fecha, String sexo, int grado, String seccion) {
+        this.codigo = indice++;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha = fecha;
+        this.nivel = "Primaria";
         this.sexo = sexo;
         this.grado = grado;
         this.seccion = seccion;

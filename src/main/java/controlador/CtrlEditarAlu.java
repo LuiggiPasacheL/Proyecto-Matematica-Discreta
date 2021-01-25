@@ -47,46 +47,6 @@ public class CtrlEditarAlu {
         
         this.vista.btnRetroceder.addActionListener(volverInicio);
         
-        this.vista.cBGrado.addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                if(vista.cBNivel.getSelectedIndex() == 0){
-                    vista.cBGrado.removeAllItems();
-                    System.out.println("hola1");
-                    vista.cBGrado.addItem("1");
-                    vista.cBGrado.addItem("2");
-                    vista.cBGrado.addItem("3");
-                    vista.cBGrado.addItem("4");
-                    vista.cBGrado.addItem("5");
-
-                }else if(vista.cBNivel.getSelectedIndex() == 1){
-                    vista.cBGrado.removeAllItems();
-                    System.out.println("hola2");
-
-                    vista.cBGrado.addItem("1");
-                    vista.cBGrado.addItem("2");
-                    vista.cBGrado.addItem("3");
-                    vista.cBGrado.addItem("4");
-                    vista.cBGrado.addItem("5");
-                    vista.cBGrado.addItem("6");
-                }else if(vista.cBNivel.getSelectedIndex() == 2){
-                    vista.cBGrado.removeAllItems();
-                                System.out.println("hola3");
-
-                    vista.cBGrado.addItem("1");
-                    vista.cBGrado.addItem("2");
-                    vista.cBGrado.addItem("3");
-                    vista.cBGrado.addItem("4");
-                    vista.cBGrado.addItem("5");
-                }
-            };
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                
-            }
-        });
-        
         this.vista.btnEditar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -107,7 +67,6 @@ public class CtrlEditarAlu {
                         throw new ArithmeticException();
                     }
                     
-                    String nivel = (String) vista.cBNivel.getSelectedItem();
                     
                     String sexo = (String) vista.cBSexo.getSelectedItem();
                     
@@ -124,7 +83,6 @@ public class CtrlEditarAlu {
                         Datos.datosAlum.get(i).setNombre(nombre);
                         Datos.datosAlum.get(i).setApellido(apellido);
                         Datos.datosAlum.get(i).setFecha(fecha);
-                        Datos.datosAlum.get(i).setNivel(nivel);
                         Datos.datosAlum.get(i).setSexo(sexo);
                         Datos.datosAlum.get(i).setGrado(grado);
                         Datos.datosAlum.get(i).setSeccion(seccion);
@@ -158,7 +116,6 @@ public class CtrlEditarAlu {
                     vista.cBdia.setSelectedItem(String.valueOf(a.getFecha().getDia()));
                     vista.cBano.setSelectedItem(String.valueOf(a.getFecha().getAno()));
                     vista.cBmes.setSelectedItem(String.valueOf(a.getFecha().getMes()));
-                    vista.cBNivel.setSelectedItem(String.valueOf(a.getNivel()));
                     vista.cBGrado.setSelectedItem(String.valueOf(a.getGrado()));
                 }
                 else{

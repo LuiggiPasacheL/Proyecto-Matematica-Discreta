@@ -8,13 +8,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.util.ArrayList;
-import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
-import javax.swing.MutableComboBoxModel;
-import javax.swing.event.ListDataListener;
 import main.Datos;
 import modelo.Alumno;
 import vista.frmIngresarAlu;
@@ -53,7 +48,6 @@ public class CtrlIngresarAlu {
                         throw new ArithmeticException();
                     }
                     
-                    String nivel = (String) vista.cBnivel.getSelectedItem();
                     
                     String sexo = (String) vista.cBsexo.getSelectedItem();
                     
@@ -61,7 +55,7 @@ public class CtrlIngresarAlu {
                     
                     String seccion = vista.txtSeccion.getText().trim();
 
-                    Datos.datosAlum.add(new Alumno(nombre, apellido, fecha, nivel, sexo, grado, seccion));
+                    Datos.datosAlum.add(new Alumno(nombre, apellido, fecha, sexo, grado, seccion));
                     System.out.println(Datos.datosAlum);
 
                     vista.txtNombre.setText("");
@@ -78,46 +72,6 @@ public class CtrlIngresarAlu {
                     JOptionPane.showMessageDialog(vista, "Fecha ingresada incorrectamente","Error",0);
 
                 }
-            }
-        });
-        
-        this.vista.cBgrado.addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                if(vista.cBnivel.getSelectedIndex() == 0){
-                    vista.cBgrado.removeAllItems();
-                    System.out.println("hola1");
-                    vista.cBgrado.addItem("1");
-                    vista.cBgrado.addItem("2");
-                    vista.cBgrado.addItem("3");
-                    vista.cBgrado.addItem("4");
-                    vista.cBgrado.addItem("5");
-
-                }else if(vista.cBnivel.getSelectedIndex() == 1){
-                    vista.cBgrado.removeAllItems();
-                    System.out.println("hola2");
-
-                    vista.cBgrado.addItem("1");
-                    vista.cBgrado.addItem("2");
-                    vista.cBgrado.addItem("3");
-                    vista.cBgrado.addItem("4");
-                    vista.cBgrado.addItem("5");
-                    vista.cBgrado.addItem("6");
-                }else if(vista.cBnivel.getSelectedIndex() == 2){
-                    vista.cBgrado.removeAllItems();
-                                System.out.println("hola3");
-
-                    vista.cBgrado.addItem("1");
-                    vista.cBgrado.addItem("2");
-                    vista.cBgrado.addItem("3");
-                    vista.cBgrado.addItem("4");
-                    vista.cBgrado.addItem("5");
-                }
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-                
             }
         });
         
