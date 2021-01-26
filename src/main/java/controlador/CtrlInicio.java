@@ -64,15 +64,6 @@ public class CtrlInicio {
             }
         };
         
-        ActionListener salir = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.print("Saliendo del sistema...");
-                JOptionPane.showMessageDialog(vista, "Salir del sistema");
-                System.exit(0);
-            }
-        };
-        
         ActionListener eliminarAlu = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

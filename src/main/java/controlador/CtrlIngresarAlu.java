@@ -94,7 +94,5 @@ public class CtrlIngresarAlu {
     public void iniciar(){
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
-        
-        
     }
 }
