@@ -18,10 +18,6 @@ import vista.frmIngresarAlu;
 import modelo.Fecha;
 import vista.frmInicio;
 
-/**
- * 
- * @author Luiggi Pasache
- */
 public class CtrlIngresarAlu {
     ArrayList<Alumno> modelo;
     frmIngresarAlu vista;

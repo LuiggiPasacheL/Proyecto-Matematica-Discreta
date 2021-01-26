@@ -25,11 +25,6 @@ import vista.frmEditarAlu;
 import vista.frmIngresarAlu;
 import vista.frmInicio;
 
-/**
- * 
- * @author Luiggi Pasache
- */
-
 public class CtrlInicio {
     frmInicio vista;
     ArrayList<Alumno> modelo;

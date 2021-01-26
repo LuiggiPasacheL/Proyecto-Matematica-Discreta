@@ -8,10 +8,6 @@ package modelo;
 
 import java.io.Serializable;
 
-/**
- * 
- * @author Luiggi Pasache
- */
 public class Fecha implements Serializable {
 
     private int dia;

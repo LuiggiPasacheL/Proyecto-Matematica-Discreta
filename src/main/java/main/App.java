@@ -19,10 +19,6 @@ import modelo.Alumno;
 import modelo.Fecha;
 import vista.frmInicio;
 
-/**
- * 
- * @author Luiggi Pasache
- */
 public class App {    
     
     public static void main(String[] args) {

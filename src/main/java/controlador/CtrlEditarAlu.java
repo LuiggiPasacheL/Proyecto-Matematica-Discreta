@@ -23,10 +23,6 @@ import modelo.Fecha;
 import vista.frmEditarAlu;
 import vista.frmInicio;
 
-/**
- * 
- * @author Luiggi Pasache
- */
 public class CtrlEditarAlu {
     ArrayList<Alumno> modeloM;
     frmEditarAlu vista;
