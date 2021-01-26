@@ -6,7 +6,9 @@
 
 package modelo;
 
-public class Alumno {
+import java.io.Serializable;
+
+public class Alumno implements Serializable {
 
     private static int indice = 1;
     private int codigo;
@@ -50,7 +52,7 @@ public class Alumno {
         this.nombre = nombre;
         this.apellido = apellido;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -70,6 +72,18 @@ public class Alumno {
         return false;
     }
 
+    public static int getIndice() {
+        return indice;
+    }
+
+    public static void setIndice(int indice) {
+        Alumno.indice = indice;
+    }
+
+    public void setCodigo(int codigo){
+        this.codigo = codigo;
+    }
+    
     public int getCodigo() {
         return codigo;
     }

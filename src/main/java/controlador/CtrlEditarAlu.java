@@ -15,6 +15,8 @@ import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+
+import main.App;
 import main.Datos;
 import modelo.Alumno;
 import modelo.Fecha;
@@ -92,6 +94,8 @@ public class CtrlEditarAlu {
                         JOptionPane.showMessageDialog(vista, "Modificado exitosamente Alumno: "+nombre);
                         
                         volverInicio.actionPerformed(e);
+
+                        App.serializar("Alumnos", modelo);
                     }
                 }catch(Exception excepcion){ //agregar mas errores
                     JOptionPane.showMessageDialog(vista, "Error al editar alumno, datos erroneos","Error",0);

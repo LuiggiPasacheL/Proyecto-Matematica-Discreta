@@ -52,7 +52,7 @@ public class frmInicio extends javax.swing.JFrame {
         rDFiltroxGrado = new javax.swing.JRadioButton();
         rDFiltroxSeccion = new javax.swing.JRadioButton();
         panelSur = new javax.swing.JPanel();
-        btnSalir = new javax.swing.JToggleButton();
+        btnEliminarAlumno = new javax.swing.JToggleButton();
         btnIngresarAlumnos = new javax.swing.JToggleButton();
         btnEditarAlumno = new javax.swing.JToggleButton();
         panelCentro = new javax.swing.JPanel();
@@ -230,11 +230,11 @@ public class frmInicio extends javax.swing.JFrame {
 
         getContentPane().add(panelNorte, java.awt.BorderLayout.PAGE_START);
 
-        btnSalir.setText("Salir");
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarAlumno.setText("Eliminar Alumno");
+        btnEliminarAlumno.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEliminarAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+                btnEliminarAlumnoActionPerformed(evt);
             }
         });
 
@@ -253,14 +253,14 @@ public class frmInicio extends javax.swing.JFrame {
         panelSurLayout.setHorizontalGroup(
             panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSurLayout.createSequentialGroup()
-                .addGap(217, 217, 217)
+                .addGap(208, 208, 208)
                 .addComponent(btnIngresarAlumnos, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                .addGap(113, 113, 113)
+                .addGap(122, 122, 122)
                 .addComponent(btnEditarAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                 .addGap(205, 205, 205))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSurLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalir)
+                .addComponent(btnEliminarAlumno)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelSurLayout.setVerticalGroup(
@@ -268,14 +268,14 @@ public class frmInicio extends javax.swing.JFrame {
             .addGroup(panelSurLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIngresarAlumnos)
-                    .addComponent(btnEditarAlumno))
+                    .addComponent(btnEditarAlumno)
+                    .addComponent(btnIngresarAlumnos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(btnSalir)
+                .addComponent(btnEliminarAlumno)
                 .addGap(26, 26, 26))
         );
 
-        btnSalir.getAccessibleContext().setAccessibleName("");
+        btnEliminarAlumno.getAccessibleContext().setAccessibleName("");
         btnIngresarAlumnos.getAccessibleContext().setAccessibleName("Añadir alumnos a la base de datos");
 
         getContentPane().add(panelSur, java.awt.BorderLayout.PAGE_END);
@@ -319,9 +319,9 @@ public class frmInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    private void btnEliminarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAlumnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }//GEN-LAST:event_btnEliminarAlumnoActionPerformed
 
     private void btnIngresarAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAlumnosActionPerformed
         // TODO add your handling code here:
@@ -377,8 +377,8 @@ public class frmInicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JToggleButton btnEditarAlumno;
+    public javax.swing.JToggleButton btnEliminarAlumno;
     public javax.swing.JToggleButton btnIngresarAlumnos;
-    public javax.swing.JToggleButton btnSalir;
     public javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
@@ -390,7 +390,7 @@ public class frmInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
+    public javax.swing.JToggleButton jToggleButton1;
     private java.awt.Panel panel3;
     private javax.swing.JPanel panelCentro;
     public javax.swing.JPanel panelNorte;
@@ -401,7 +401,7 @@ public class frmInicio extends javax.swing.JFrame {
     public javax.swing.JRadioButton rDFiltroxSeccion;
     public javax.swing.JTable tblAlumnos;
     public javax.swing.JTextField txtFiltrar;
-    private javax.swing.JTextField txtValor1;
-    private javax.swing.JTextField txtValor2;
+    public javax.swing.JTextField txtValor1;
+    public javax.swing.JTextField txtValor2;
     // End of variables declaration//GEN-END:variables
 }

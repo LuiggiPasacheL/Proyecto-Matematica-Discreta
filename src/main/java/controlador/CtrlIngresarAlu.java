@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
+import main.App;
 import main.Datos;
 import modelo.Alumno;
 import vista.frmIngresarAlu;
@@ -62,7 +64,9 @@ public class CtrlIngresarAlu {
                     vista.txtApellidos.setText("");
                     vista.txtSeccion.setText("");
                     
-                    JOptionPane.showMessageDialog(vista, "Agregado exitosamente Alumno: "+nombre,"Error",1);
+                    JOptionPane.showMessageDialog(vista, "Agregado exitosamente Alumno: "+nombre);
+
+                    App.serializar("Alumnos", modelo);
                     
                 }catch(NumberFormatException excepcion){
                     

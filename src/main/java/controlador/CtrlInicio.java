@@ -12,12 +12,12 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import main.App;
 import main.Datos;
 
 import modelo.Alumno;
@@ -73,9 +73,50 @@ public class CtrlInicio {
             }
         };
         
+        ActionListener eliminarAlu = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(vista.tblAlumnos.getSelectedRow() < 0){
+                    JOptionPane.showMessageDialog(vista, "Debe seleccionar algun Alumno");
+                    return;
+                }
+                    
+                Datos.indiceALumnoSeleccionado = vista.tblAlumnos.getSelectedRow();
+
+                int opc = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de borrar al alumno: "+Datos.datosAlum.get(Datos.indiceALumnoSeleccionado).getNombre(),"Borrar alumno",0);
+
+                if(opc == 1){
+                    return;
+                }
+
+                int indice = Alumno.getIndice();
+
+                Alumno.setIndice(indice-1);
+
+                int i = 0;
+
+                for(Alumno a : Datos.datosAlum){
+                    a.setCodigo(i);
+                    i++;
+                }
+
+                System.out.println(Datos.indiceALumnoSeleccionado);
+
+                Datos.datosAlum.remove(Datos.indiceALumnoSeleccionado);
+
+                DefaultTableModel modelo = (DefaultTableModel) vista.tblAlumnos.getModel();
+
+                modelo.removeRow(Datos.indiceALumnoSeleccionado);
+
+                App.serializar("Alumnos",Datos.datosAlum);
+            }
+        };
+        
+        
         vista.btnIngresarAlumnos.addActionListener(ingresarAlu);
         
-        vista.btnSalir.addActionListener(salir);
+        vista.btnEliminarAlumno.addActionListener(eliminarAlu);
         
         vista.btnEditarAlumno.addActionListener(editarAlu);
         
