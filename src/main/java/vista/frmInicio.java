@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.ImageIcon;
 import javax.swing.table.TableRowSorter;
 
 /**
@@ -18,6 +19,7 @@ public class frmInicio extends javax.swing.JFrame {
      */
     public frmInicio() {
         initComponents();
+//        setIconImage(new ImageIcon(getClass().getResource("../imagenes/iconoColegio.jpeg")).getImage());
     }
     
     public TableRowSorter trs;
@@ -62,6 +64,7 @@ public class frmInicio extends javax.swing.JFrame {
         jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro de Alumnos");
 
         jInternalFrame1.setVisible(false);
 
@@ -144,7 +147,7 @@ public class frmInicio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setText("<html> <h1>REGISTRO DE ALUMNOS</h1> </html>");
+        jLabel1.setText("<html> <h1>SISTEMA CRISTO REDENTOR</h1> </html>");
 
         jLabel2.setText("Filtrar");
 

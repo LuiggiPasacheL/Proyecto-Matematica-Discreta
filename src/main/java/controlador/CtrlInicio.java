@@ -81,24 +81,21 @@ public class CtrlInicio {
                     return;
                 }
 
-                int indice = Alumno.getIndice();
-
-                Alumno.setIndice(indice-1);
+                Datos.datosAlum.remove(Datos.indiceALumnoSeleccionado);
 
                 int i = 0;
 
                 for(Alumno a : Datos.datosAlum){
-                    a.setCodigo(i);
                     i++;
+                    a.setCodigo(i);
+                    System.out.println(a);
                 }
 
-                System.out.println(Datos.indiceALumnoSeleccionado);
+                Alumno.setIndice(i+1);
 
-                Datos.datosAlum.remove(Datos.indiceALumnoSeleccionado);
+                vista.dispose();
 
-                DefaultTableModel modelo = (DefaultTableModel) vista.tblAlumnos.getModel();
-
-                modelo.removeRow(Datos.indiceALumnoSeleccionado);
+                iniciar();
 
                 App.serializar("Alumnos",Datos.datosAlum);
             }

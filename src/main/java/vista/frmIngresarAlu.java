@@ -16,6 +16,7 @@ public class frmIngresarAlu extends javax.swing.JFrame {
      */
     public frmIngresarAlu() {
         initComponents();
+        this.setResizable(false);
     }
     
     /**
@@ -53,6 +54,7 @@ public class frmIngresarAlu extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ingresar Alumno");
 
         jLabel1.setText("AÑADIR ALUMNO");
 

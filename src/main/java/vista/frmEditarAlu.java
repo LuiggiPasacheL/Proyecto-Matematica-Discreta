@@ -16,6 +16,7 @@ public class frmEditarAlu extends javax.swing.JFrame {
      */
     public frmEditarAlu() {
         initComponents();
+        this.setResizable(false);
     }
 
     /**
@@ -55,6 +56,7 @@ public class frmEditarAlu extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Editar Alumno");
 
         jLabel1.setText("Alumno a Editar");
 
