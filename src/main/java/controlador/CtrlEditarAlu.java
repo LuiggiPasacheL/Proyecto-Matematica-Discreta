@@ -47,7 +47,17 @@ public class CtrlEditarAlu {
             }
         };
         
-        this.vista.btnRetroceder.addActionListener(volverInicio);
+        this.vista.btnRetroceder.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vista.dispose();
+                
+                frmInicio fInicio = new frmInicio();
+                CtrlInicio mInicio = new CtrlInicio(fInicio, modelo);
+
+                // mInicio.iniciar(); //descomentar si no produce error
+            }
+        });
         
         this.vista.btnEditar.addActionListener(new ActionListener() {
             @Override
