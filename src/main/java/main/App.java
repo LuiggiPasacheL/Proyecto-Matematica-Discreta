@@ -16,7 +16,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import modelo.Alumno;
-import modelo.Fecha;
 import vista.frmInicio;
 
 public class App {    
@@ -31,8 +30,10 @@ public class App {
             serializar("Alumnos", Datos.datosAlum);
         }
     
-        //SERIALZIANDO
+        //DESERIALZIANDO
         Datos.datosAlum = (ArrayList<Alumno>) deserializar("Alumnos");
+
+        Alumno.setIndice(Datos.datosAlum.size()+1);
 
         frmInicio vista = new frmInicio();
         CtrlInicio controlador = new CtrlInicio(vista, Datos.datosAlum);

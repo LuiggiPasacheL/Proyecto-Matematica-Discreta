@@ -111,7 +111,7 @@ public class frmEditarAlu extends javax.swing.JFrame {
         jLabel11.setText("EDICION DE ALUMNOS");
 
         cBano.setEditable(true);
-        cBano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Año", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", " " }));
+        cBano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Año", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
         cBano.setToolTipText("Año");
 
         jLabel3.setText("/");
