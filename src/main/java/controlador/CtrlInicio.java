@@ -21,16 +21,17 @@ import main.App;
 import main.Datos;
 
 import modelo.Alumno;
+import modelo.Sistema;
 import vista.frmEditarAlu;
 import vista.frmIngresarAlu;
 import vista.frmInicio;
 
 public class CtrlInicio {
     frmInicio vista;
-    ArrayList<Alumno> modelo;
+    Sistema modelo;
     int columnaAFiltrar;
 
-    public CtrlInicio(frmInicio vista, ArrayList<Alumno> modelo){
+    public CtrlInicio(frmInicio vista, Sistema modelo){
         this.vista = vista;
         this.modelo = modelo;
         
@@ -80,7 +81,7 @@ public class CtrlInicio {
 
                 int i = 0;
 
-                for(Alumno a : Datos.datosAlum){
+                for(Alumno a : Datos.datosAlum.getDatos()){
                     i++;
                     a.setCodigo(i);
                     System.out.println(a);
@@ -125,6 +126,108 @@ public class CtrlInicio {
             
         });
         
+        ActionListener ordenarXApellido = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String[] cabecera = Sistema.getCabecera();
+                
+                modelo.quickSortApellido(0, modelo.dimension() - 1);
+                
+                String[][] datos = new String[Datos.datosAlum.dimension()][8];
+                
+                for (int i = 0; i < modelo.dimension(); i++) {
+                    datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
+                    datos[i][1] = Datos.datosAlum.get(i).getNombre();
+                    datos[i][2] = Datos.datosAlum.get(i).getApellido();
+                    datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
+                    datos[i][4] = Datos.datosAlum.get(i).getSexo();
+                    datos[i][5] = Datos.datosAlum.get(i).getNivel();
+                    datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
+                    datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+                }
+                
+                DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+                vista.tblAlumnos.setModel(tabla);
+            }
+        };
+        
+        ActionListener ordenarxNombre = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String[] cabecera = Sistema.getCabecera();
+                
+                modelo.quickSortNombre(0, modelo.dimension() - 1);
+                
+                String[][] datos = new String[Datos.datosAlum.dimension()][8];
+                
+                for (int i = 0; i < modelo.dimension(); i++) {
+                    datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
+                    datos[i][1] = Datos.datosAlum.get(i).getNombre();
+                    datos[i][2] = Datos.datosAlum.get(i).getApellido();
+                    datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
+                    datos[i][4] = Datos.datosAlum.get(i).getSexo();
+                    datos[i][5] = Datos.datosAlum.get(i).getNivel();
+                    datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
+                    datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+                }
+                
+                DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+                vista.tblAlumnos.setModel(tabla);
+            }
+        };
+        ActionListener ordenarxID = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String[] cabecera = Sistema.getCabecera();
+                
+                modelo.quickSortId(0, modelo.dimension() - 1);
+                
+                String[][] datos = new String[Datos.datosAlum.dimension()][8];
+                
+                for (int i = 0; i < modelo.dimension(); i++) {
+                    datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
+                    datos[i][1] = Datos.datosAlum.get(i).getNombre();
+                    datos[i][2] = Datos.datosAlum.get(i).getApellido();
+                    datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
+                    datos[i][4] = Datos.datosAlum.get(i).getSexo();
+                    datos[i][5] = Datos.datosAlum.get(i).getNivel();
+                    datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
+                    datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+                }
+                
+                DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+                vista.tblAlumnos.setModel(tabla);
+            }
+        };
+        ActionListener ordenarxSeccion = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String[] cabecera = Sistema.getCabecera();
+                
+                modelo.quickSortSeccion(0, modelo.dimension() - 1);
+                
+                String[][] datos = new String[Datos.datosAlum.dimension()][8];
+                
+                for (int i = 0; i < modelo.dimension(); i++) {
+                    datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
+                    datos[i][1] = Datos.datosAlum.get(i).getNombre();
+                    datos[i][2] = Datos.datosAlum.get(i).getApellido();
+                    datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
+                    datos[i][4] = Datos.datosAlum.get(i).getSexo();
+                    datos[i][5] = Datos.datosAlum.get(i).getNivel();
+                    datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
+                    datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+                }
+                
+                DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+                vista.tblAlumnos.setModel(tabla);
+            }
+        };
+
         
         FocusListener fl = new FocusListener() {
             @Override
@@ -142,7 +245,11 @@ public class CtrlInicio {
         vista.rDFiltroxNombre.addFocusListener(fl);
         vista.rDFiltroxGrado.addFocusListener(fl);
         vista.rDFiltroxSeccion.addFocusListener(fl);
-        
+
+        vista.btnQuickID.addActionListener(ordenarxID);
+        vista.btnQuickNombre.addActionListener(ordenarxNombre);
+        vista.btnQuickApellido.addActionListener(ordenarXApellido);
+        vista.btnQuickSeccion.addActionListener(ordenarxSeccion);
         
     }
     
@@ -150,9 +257,9 @@ public class CtrlInicio {
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);     
         
-        String[][] datos = new String[Datos.datosAlum.size()][8];
+        String[][] datos = new String[modelo.dimension()][8];
         
-        for (int i = 0; i < Datos.datosAlum.size(); i++) {
+        for (int i = 0; i < modelo.dimension(); i++) {
             datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
             datos[i][1] = Datos.datosAlum.get(i).getNombre();
             datos[i][2] = Datos.datosAlum.get(i).getApellido();

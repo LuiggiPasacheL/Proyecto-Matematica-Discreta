@@ -16,13 +16,14 @@ import main.Datos;
 import modelo.Alumno;
 import vista.frmIngresarAlu;
 import modelo.Fecha;
+import modelo.Sistema;
 import vista.frmInicio;
 
 public class CtrlIngresarAlu {
-    ArrayList<Alumno> modelo;
+    Sistema modelo;
     frmIngresarAlu vista;
 
-    public CtrlIngresarAlu(ArrayList<Alumno> modelo, frmIngresarAlu vista) {
+    public CtrlIngresarAlu(Sistema modelo, frmIngresarAlu vista) {
         this.modelo = modelo;
         this.vista = vista;
         
@@ -62,7 +63,7 @@ public class CtrlIngresarAlu {
                     
                     JOptionPane.showMessageDialog(vista, "Agregado exitosamente Alumno: "+nombre);
 
-                    App.serializar("Alumnos", modelo);
+                    App.serializar("Alumnos.dat", modelo);
                     
                 }catch(NumberFormatException excepcion){
                     

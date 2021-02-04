@@ -57,6 +57,10 @@ public class frmInicio extends javax.swing.JFrame {
         btnEliminarAlumno = new javax.swing.JToggleButton();
         btnIngresarAlumnos = new javax.swing.JToggleButton();
         btnEditarAlumno = new javax.swing.JToggleButton();
+        btnQuickApellido = new javax.swing.JButton();
+        btnQuickID = new javax.swing.JButton();
+        btnQuickSeccion = new javax.swing.JButton();
+        btnQuickNombre = new javax.swing.JButton();
         panelCentro = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAlumnos = new javax.swing.JTable();
@@ -185,28 +189,31 @@ public class frmInicio extends javax.swing.JFrame {
                 .addComponent(rDFiltroxNombre)
                 .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelNorteLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                        .addComponent(rDFiltroxApellido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                        .addComponent(rDFiltroxGrado))
-                    .addGroup(panelNorteLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, Short.MAX_VALUE)
+                        .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(425, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNorteLayout.createSequentialGroup()
+                        .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panelNorteLayout.createSequentialGroup()
-                                .addGap(293, 293, 293)
-                                .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelNorteLayout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(txtFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panelNorteLayout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(txtFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(rDFiltroxSeccion)
-                .addContainerGap())
+                                .addGap(103, 103, 103)
+                                .addComponent(rDFiltroxApellido)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(rDFiltroxGrado)))
+                        .addGap(102, 102, 102)
+                        .addComponent(rDFiltroxSeccion)
+                        .addGap(53, 53, 53))))
         );
         panelNorteLayout.setVerticalGroup(
             panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,14 +229,18 @@ public class frmInicio extends javax.swing.JFrame {
                     .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
                 .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rDFiltroxApellido)
-                    .addComponent(rDFiltroxNombre)
-                    .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rDFiltroxGrado)
-                        .addComponent(rDFiltroxSeccion)))
-                .addGap(26, 26, 26))
+                    .addGroup(panelNorteLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rDFiltroxNombre)
+                            .addGroup(panelNorteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(rDFiltroxGrado)
+                                .addComponent(rDFiltroxSeccion))))
+                    .addGroup(panelNorteLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(rDFiltroxApellido)))
+                .addGap(21, 21, 21))
         );
 
         getContentPane().add(panelNorte, java.awt.BorderLayout.PAGE_START);
@@ -252,31 +263,73 @@ public class frmInicio extends javax.swing.JFrame {
 
         btnEditarAlumno.setText("Editar Alumno");
 
+        btnQuickApellido.setText("Ordenar por apellido");
+        btnQuickApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuickApellidoActionPerformed(evt);
+            }
+        });
+
+        btnQuickID.setText("Ordenar por ID");
+        btnQuickID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuickIDActionPerformed(evt);
+            }
+        });
+
+        btnQuickSeccion.setText("Ordenar por seccion");
+        btnQuickSeccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuickSeccionActionPerformed(evt);
+            }
+        });
+
+        btnQuickNombre.setText("Ordenar por nombre");
+        btnQuickNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuickNombreActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelSurLayout = new javax.swing.GroupLayout(panelSur);
         panelSur.setLayout(panelSurLayout);
         panelSurLayout.setHorizontalGroup(
             panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSurLayout.createSequentialGroup()
-                .addGap(208, 208, 208)
-                .addComponent(btnIngresarAlumnos, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                .addGap(122, 122, 122)
-                .addComponent(btnEditarAlumno, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                .addGap(205, 205, 205))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSurLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEliminarAlumno)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addGroup(panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelSurLayout.createSequentialGroup()
+                        .addComponent(btnIngresarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(btnEliminarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnEditarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
+                    .addGroup(panelSurLayout.createSequentialGroup()
+                        .addComponent(btnQuickID)
+                        .addGap(58, 58, 58)
+                        .addComponent(btnQuickNombre)
+                        .addGap(52, 52, 52)
+                        .addComponent(btnQuickApellido)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnQuickSeccion)))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         panelSurLayout.setVerticalGroup(
             panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSurLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(25, 25, 25)
                 .addGroup(panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQuickApellido)
+                    .addComponent(btnQuickID)
+                    .addComponent(btnQuickSeccion)
+                    .addComponent(btnQuickNombre))
+                .addGap(33, 33, 33)
+                .addGroup(panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminarAlumno)
                     .addComponent(btnEditarAlumno)
                     .addComponent(btnIngresarAlumnos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(btnEliminarAlumno)
-                .addGap(26, 26, 26))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         btnEliminarAlumno.getAccessibleContext().setAccessibleName("");
@@ -308,14 +361,14 @@ public class frmInicio extends javax.swing.JFrame {
         panelCentro.setLayout(panelCentroLayout);
         panelCentroLayout.setHorizontalGroup(
             panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
         );
         panelCentroLayout.setVerticalGroup(
             panelCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCentroLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addGap(45, 45, 45))
         );
 
         getContentPane().add(panelCentro, java.awt.BorderLayout.CENTER);
@@ -342,6 +395,22 @@ public class frmInicio extends javax.swing.JFrame {
     private void txtValor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValor1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtValor1ActionPerformed
+
+    private void btnQuickApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuickApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnQuickApellidoActionPerformed
+
+    private void btnQuickIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuickIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnQuickIDActionPerformed
+
+    private void btnQuickNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuickNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnQuickNombreActionPerformed
+
+    private void btnQuickSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuickSeccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnQuickSeccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,6 +452,10 @@ public class frmInicio extends javax.swing.JFrame {
     public javax.swing.JToggleButton btnEditarAlumno;
     public javax.swing.JToggleButton btnEliminarAlumno;
     public javax.swing.JToggleButton btnIngresarAlumnos;
+    public javax.swing.JButton btnQuickApellido;
+    public javax.swing.JButton btnQuickID;
+    public javax.swing.JButton btnQuickNombre;
+    public javax.swing.JButton btnQuickSeccion;
     public javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;

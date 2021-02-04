@@ -16,24 +16,25 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import modelo.Alumno;
+import modelo.Sistema;
 import vista.frmInicio;
 
 public class App {    
     
     public static void main(String[] args) {
         
-        File file = new File("Alumnos");
+        File file = new File("Alumnos.dat");
         
 
         //EN CASO QUE EL ARCHIVO CUENTAS NO EXISTA CREAR UNO POR DEFAULT//    
         if(!file.exists()){  
-            serializar("Alumnos", Datos.datosAlum);
+            serializar("Alumnos.dat", Datos.datosAlum);
         }
     
         //DESERIALZIANDO
-        Datos.datosAlum = (ArrayList<Alumno>) deserializar("Alumnos");
+        Datos.datosAlum = (Sistema) deserializar("Alumnos.dat");
 
-        Alumno.setIndice(Datos.datosAlum.size()+1);
+        Alumno.setIndice(Datos.datosAlum.dimension()+1);
 
         frmInicio vista = new frmInicio();
         CtrlInicio controlador = new CtrlInicio(vista, Datos.datosAlum);
@@ -69,5 +70,47 @@ public class App {
             throw new RuntimeException(e);
         }
         return obj;    
+    }
+
+    public static Alumno[] quickSortNombre(Alumno[] alumno){
+        Alumno[] resultado = alumno;
+
+        if(resultado.length < 1){
+            return new Alumno[]{};
+        }
+
+        Alumno[] arrayi = new Alumno[]{};
+        Alumno[] arrayd = new Alumno[]{};
+
+        Alumno pivote = resultado[0];
+
+        for(int i = 1 ; i < resultado.length; i++){
+            if(resultado[i].getNombre().compareTo(pivote.getNombre()) < 0){
+                arrayi = concatenar(arrayi, new Alumno[] { resultado[i] });
+            } else {
+                arrayd = concatenar(arrayd, new Alumno[] { resultado[i] });
+            }
+        }
+
+        resultado = concatenar(quickSortNombre(arrayi), new Alumno[] { pivote });
+
+        resultado = concatenar(resultado,arrayd);
+
+        return resultado;
+    }
+
+
+    private static Alumno[] concatenar(Alumno[] vector1, Alumno[] vector2) {
+        Alumno[] resultado = new Alumno[vector1.length+vector2.length];
+
+        for(int i=0;i < vector1.length ; i++){
+            resultado[i] = vector1[i];
+        }
+
+        for(int i=vector1.length; i < vector2.length ; i++){
+            resultado[i] = vector2[i - vector1.length];
+        }
+
+        return resultado;
     }
 }

@@ -10,9 +10,10 @@ import java.io.Serializable;
 import modelo.Alumno;
 
 import java.util.ArrayList;
+import modelo.Sistema;
 
 public class Datos implements Serializable{
-    public static ArrayList<Alumno> datosAlum = new ArrayList<Alumno>();
+    public static Sistema datosAlum = new Sistema();
     //datos auxiliares
     public static int indiceALumnoSeleccionado;
 }
