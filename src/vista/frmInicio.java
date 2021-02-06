@@ -296,15 +296,15 @@ public class frmInicio extends javax.swing.JFrame {
         panelSurLayout.setHorizontalGroup(
             panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSurLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
+                .addGap(107, 107, 107)
                 .addGroup(panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelSurLayout.createSequentialGroup()
                         .addComponent(btnIngresarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addGap(28, 28, 28)
                         .addComponent(btnEliminarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addGap(28, 28, 28)
                         .addComponent(btnEditarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))
+                        .addGap(66, 66, 66))
                     .addGroup(panelSurLayout.createSequentialGroup()
                         .addComponent(btnQuickID)
                         .addGap(58, 58, 58)
@@ -313,7 +313,7 @@ public class frmInicio extends javax.swing.JFrame {
                         .addComponent(btnQuickApellido)
                         .addGap(33, 33, 33)
                         .addComponent(btnQuickSeccion)))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         panelSurLayout.setVerticalGroup(
             panelSurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

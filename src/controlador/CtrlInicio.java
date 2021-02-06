@@ -87,13 +87,11 @@ public class CtrlInicio {
                     System.out.println(a);
                 }
 
-                Alumno.setIndice(i+1);
-
                 vista.dispose();
 
                 iniciar();
 
-                App.serializar("Alumnos",Datos.datosAlum);
+                App.serializar("Alumnos.dat",Datos.datosAlum);
             }
         };
         
@@ -132,22 +130,27 @@ public class CtrlInicio {
 
                 String[] cabecera = Sistema.getCabecera();
                 
-                modelo.quickSortApellido(0, modelo.dimension() - 1);
+                Alumno[] ordenado = Sistema.quickSortApellido(modelo.getDatos());
                 
                 String[][] datos = new String[Datos.datosAlum.dimension()][8];
                 
                 for (int i = 0; i < modelo.dimension(); i++) {
-                    datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
-                    datos[i][1] = Datos.datosAlum.get(i).getNombre();
-                    datos[i][2] = Datos.datosAlum.get(i).getApellido();
-                    datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
-                    datos[i][4] = Datos.datosAlum.get(i).getSexo();
-                    datos[i][5] = Datos.datosAlum.get(i).getNivel();
-                    datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
-                    datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+                    datos[i][0] = String.valueOf(ordenado[i].getCodigo());
+                    datos[i][1] = ordenado[i].getNombre();
+                    datos[i][2] = ordenado[i].getApellido();
+                    datos[i][3] = ordenado[i].getFecha().toString();
+                    datos[i][4] = ordenado[i].getSexo();
+                    datos[i][5] = ordenado[i].getNivel();
+                    datos[i][6] = String.valueOf(ordenado[i].getGrado());
+                    datos[i][7] = ordenado[i].getSeccion();
                 }
                 
+                vista.trs.setRowFilter(RowFilter.regexFilter(vista.txtFiltrar.getText(), columnaAFiltrar));
+                
                 DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+                
+                vista.trs = new TableRowSorter(tabla);
+                vista.tblAlumnos.setRowSorter(vista.trs);
                 vista.tblAlumnos.setModel(tabla);
             }
         };
@@ -158,22 +161,27 @@ public class CtrlInicio {
 
                 String[] cabecera = Sistema.getCabecera();
                 
-                modelo.quickSortNombre(0, modelo.dimension() - 1);
+                Alumno[] ordenado = Sistema.quickSortNombre(modelo.getDatos());
                 
                 String[][] datos = new String[Datos.datosAlum.dimension()][8];
                 
                 for (int i = 0; i < modelo.dimension(); i++) {
-                    datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
-                    datos[i][1] = Datos.datosAlum.get(i).getNombre();
-                    datos[i][2] = Datos.datosAlum.get(i).getApellido();
-                    datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
-                    datos[i][4] = Datos.datosAlum.get(i).getSexo();
-                    datos[i][5] = Datos.datosAlum.get(i).getNivel();
-                    datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
-                    datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+                    datos[i][0] = String.valueOf(ordenado[i].getCodigo());
+                    datos[i][1] = ordenado[i].getNombre();
+                    datos[i][2] = ordenado[i].getApellido();
+                    datos[i][3] = ordenado[i].getFecha().toString();
+                    datos[i][4] = ordenado[i].getSexo();
+                    datos[i][5] = ordenado[i].getNivel();
+                    datos[i][6] = String.valueOf(ordenado[i].getGrado());
+                    datos[i][7] = ordenado[i].getSeccion();
                 }
                 
+                vista.trs.setRowFilter(RowFilter.regexFilter(vista.txtFiltrar.getText(), columnaAFiltrar));
+                
                 DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+                
+                vista.trs = new TableRowSorter(tabla);
+                vista.tblAlumnos.setRowSorter(vista.trs);
                 vista.tblAlumnos.setModel(tabla);
             }
         };
@@ -183,22 +191,27 @@ public class CtrlInicio {
 
                 String[] cabecera = Sistema.getCabecera();
                 
-                modelo.quickSortId(0, modelo.dimension() - 1);
+                Alumno[] ordenado = Sistema.quickSortID(modelo.getDatos());
                 
                 String[][] datos = new String[Datos.datosAlum.dimension()][8];
                 
                 for (int i = 0; i < modelo.dimension(); i++) {
-                    datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
-                    datos[i][1] = Datos.datosAlum.get(i).getNombre();
-                    datos[i][2] = Datos.datosAlum.get(i).getApellido();
-                    datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
-                    datos[i][4] = Datos.datosAlum.get(i).getSexo();
-                    datos[i][5] = Datos.datosAlum.get(i).getNivel();
-                    datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
-                    datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+                    datos[i][0] = String.valueOf(ordenado[i].getCodigo());
+                    datos[i][1] = ordenado[i].getNombre();
+                    datos[i][2] = ordenado[i].getApellido();
+                    datos[i][3] = ordenado[i].getFecha().toString();
+                    datos[i][4] = ordenado[i].getSexo();
+                    datos[i][5] = ordenado[i].getNivel();
+                    datos[i][6] = String.valueOf(ordenado[i].getGrado());
+                    datos[i][7] = ordenado[i].getSeccion();
                 }
                 
+                vista.trs.setRowFilter(RowFilter.regexFilter(vista.txtFiltrar.getText(), columnaAFiltrar));
+                
                 DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+                
+                vista.trs = new TableRowSorter(tabla);
+                vista.tblAlumnos.setRowSorter(vista.trs);
                 vista.tblAlumnos.setModel(tabla);
             }
         };
@@ -208,22 +221,27 @@ public class CtrlInicio {
 
                 String[] cabecera = Sistema.getCabecera();
                 
-                modelo.quickSortSeccion(0, modelo.dimension() - 1);
+                Alumno[] ordenado = Sistema.quickSortSeccion(modelo.getDatos());
                 
                 String[][] datos = new String[Datos.datosAlum.dimension()][8];
                 
                 for (int i = 0; i < modelo.dimension(); i++) {
-                    datos[i][0] = String.valueOf(Datos.datosAlum.get(i).getCodigo());
-                    datos[i][1] = Datos.datosAlum.get(i).getNombre();
-                    datos[i][2] = Datos.datosAlum.get(i).getApellido();
-                    datos[i][3] = Datos.datosAlum.get(i).getFecha().toString();
-                    datos[i][4] = Datos.datosAlum.get(i).getSexo();
-                    datos[i][5] = Datos.datosAlum.get(i).getNivel();
-                    datos[i][6] = String.valueOf(Datos.datosAlum.get(i).getGrado());
-                    datos[i][7] = Datos.datosAlum.get(i).getSeccion();
+                    datos[i][0] = String.valueOf(ordenado[i].getCodigo());
+                    datos[i][1] = ordenado[i].getNombre();
+                    datos[i][2] = ordenado[i].getApellido();
+                    datos[i][3] = ordenado[i].getFecha().toString();
+                    datos[i][4] = ordenado[i].getSexo();
+                    datos[i][5] = ordenado[i].getNivel();
+                    datos[i][6] = String.valueOf(ordenado[i].getGrado());
+                    datos[i][7] = ordenado[i].getSeccion();
                 }
                 
+                vista.trs.setRowFilter(RowFilter.regexFilter(vista.txtFiltrar.getText(), columnaAFiltrar));
+                
                 DefaultTableModel tabla = new DefaultTableModel(datos,cabecera);
+                
+                vista.trs = new TableRowSorter(tabla);
+                vista.tblAlumnos.setRowSorter(vista.trs);
                 vista.tblAlumnos.setModel(tabla);
             }
         };

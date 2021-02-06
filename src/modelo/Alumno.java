@@ -10,7 +10,6 @@ import java.io.Serializable;
 
 public class Alumno implements Serializable {
 
-    private static int indice = 1;
     private int codigo;
     private String nombre;
     private String apellido;
@@ -23,7 +22,6 @@ public class Alumno implements Serializable {
 
     //por si necesita cambiar nivel
     public Alumno(String nombre,String apellido, Fecha fecha, String nivel, String sexo, int grado, String seccion) {
-        this.codigo = indice++;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha = fecha;
@@ -35,7 +33,6 @@ public class Alumno implements Serializable {
     }
     
     public Alumno(String nombre,String apellido, Fecha fecha, String sexo, int grado, String seccion) {
-        this.codigo = indice++;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha = fecha;
@@ -44,6 +41,9 @@ public class Alumno implements Serializable {
         this.grado = grado;
         this.seccion = seccion;
         this.existe = true; 
+    }
+
+    public Alumno(){
     }
     
     
@@ -70,14 +70,6 @@ public class Alumno implements Serializable {
             return true;
         }
         return false;
-    }
-
-    public static int getIndice() {
-        return indice;
-    }
-
-    public static void setIndice(int indice) {
-        Alumno.indice = indice;
     }
 
     public void setCodigo(int codigo){
